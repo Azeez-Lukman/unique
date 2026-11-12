@@ -17,9 +17,9 @@
 | **03** | Brand Identity & Design System | **Completed** (Calibrated with official logo: Deep Forest Green `#1C3D28`) | 12 Nov 2026 |
 | **04** | Website Copywriting | **Completed** (Persuasive, human, un-inflated copy) | 12 Nov 2026 |
 | **05** | Frontend Development | **Completed** (All 6 core pages, responsive layouts, Tailwind v4) | 12 Nov 2026 |
-| **06** | Backend Development & Forms | **Completed** (Models, Django forms, CSRF, admin, notifications) | 12 Nov 2026 |
+| **06** | Backend Development & Forms | **Completed** (Models, forms, CSRF, admin, and Custom Staff Dashboard) | 12 Nov 2026 |
 | **07** | SEO, Local SEO & GEO | **Completed** (XML Sitemap, robots.txt, Schema.org JSON-LD) | 12 Nov 2026 |
-| **08** | Testing & Quality Assurance | **Completed** (12/12 unit tests passing, security hardening verified) | 12 Nov 2026 |
+| **08** | Testing & Quality Assurance | **Completed** (17/17 automated unit tests passing, security hardening verified) | 12 Nov 2026 |
 | **09** | Deployment Planning & Hosting Selection | **Active** (Hosting evaluation presented for owner approval) | 12 Nov 2026 |
 | **10** | Handover & Documentation | **Prepared** (README.md, admin guide, maintenance checklist) | 12 Nov 2026 |
 

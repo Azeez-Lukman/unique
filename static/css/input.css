@@ -2,6 +2,7 @@
 
 @source "../../templates/**/*.html";
 @source "../../core/**/*.py";
+@source "../../static/js/**/*.js";
 
 @theme {
   /* Unique Property & Construction Official Brand Palette (Calibrated from Logo) */
@@ -35,5 +36,26 @@
 
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
+  }
+
+  /* Native select and option styling conforming to brand palette */
+  select {
+    accent-color: #1c3d28;
+  }
+
+  select option {
+    background-color: #ffffff;
+    color: #1d2520;
+    padding: 8px 12px;
+  }
+
+  select option:checked {
+    background-color: #1c3d28 !important;
+    color: #ffffff !important;
+  }
+
+  select option:hover {
+    background-color: #edf3ee !important;
+    color: #1c3d28 !important;
   }
 }

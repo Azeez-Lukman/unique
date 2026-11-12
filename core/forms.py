@@ -23,7 +23,7 @@ class EnquiryForm(forms.ModelForm):
                 'required': True
             }),
             'category': forms.Select(attrs={
-                'class': 'w-full px-4 py-3 rounded-lg border border-brand-border bg-white text-brand-charcoal focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition text-sm',
+                'class': 'brand-select w-full px-4 py-3 rounded-lg border border-brand-border bg-white text-brand-charcoal focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition text-sm cursor-pointer',
             }),
             'subject': forms.TextInput(attrs={
                 'class': 'w-full px-4 py-3 rounded-lg border border-brand-border bg-white text-brand-charcoal focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition text-sm',
