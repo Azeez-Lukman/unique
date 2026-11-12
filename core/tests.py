@@ -155,3 +155,67 @@ class PropertyListingTests(TestCase):
         response_rent = self.client.get(reverse('core:properties') + '?type=rent')
         self.assertContains(response_rent, "City Center Executive Suite")
         self.assertNotContains(response_rent, "Modern Hillside Villa")
+
+
+
+class DashboardSecurityAndFunctionalityTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        self.staff_user = User.objects.create_user(
+            username='staff_member',
+            password='Password123!',
+            is_staff=True
+        )
+        self.regular_user = User.objects.create_user(
+            username='regular_customer',
+            password='Password123!',
+            is_staff=False
+        )
+        self.sample_enquiry = Enquiry.objects.create(
+            name="David Copper",
+            email="david@example.com",
+            phone="+1 (555) 345-6789",
+            category="construction_commercial",
+            subject="Retail fit-out",
+            message="Need commercial fit-out for 2000 sqft store."
+        )
+
+    def test_dashboard_unauthenticated_redirects_to_login(self):
+        response = self.client.get(reverse('core:dashboard'))
+        self.assertEqual(response.status_code, 302)
+        self.assertIn(reverse('core:dashboard_login'), response.url)
+
+    def test_dashboard_regular_user_access_blocked(self):
+        self.client.login(username='regular_customer', password='Password123!')
+        response = self.client.get(reverse('core:dashboard'))
+        self.assertEqual(response.status_code, 302)
+        self.assertIn(reverse('core:dashboard_login'), response.url)
+
+    def test_dashboard_staff_user_successful_access(self):
+        self.client.login(username='staff_member', password='Password123!')
+        response = self.client.get(reverse('core:dashboard'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'dashboard/index.html')
+        self.assertContains(response, 'Customer Enquiries & Leads')
+        self.assertContains(response, 'David Copper')
+
+    def test_toggle_enquiry_status(self):
+        self.client.login(username='staff_member', password='Password123!')
+        self.assertFalse(self.sample_enquiry.is_reviewed)
+        
+        response = self.client.post(reverse('core:toggle_enquiry_status', args=[self.sample_enquiry.id]), follow=True)
+        self.assertEqual(response.status_code, 200)
+        
+        self.sample_enquiry.refresh_from_db()
+        self.assertTrue(self.sample_enquiry.is_reviewed)
+
+    def test_export_enquiries_csv(self):
+        self.client.login(username='staff_member', password='Password123!')
+        response = self.client.get(reverse('core:export_enquiries_csv'))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response['Content-Type'], 'text/csv')
+        self.assertIn('attachment; filename="unique_customer_enquiries.csv"', response['Content-Disposition'])
+        self.assertContains(response, 'David Copper')
+        self.assertContains(response, 'Commercial Construction')

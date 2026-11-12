@@ -123,3 +123,126 @@ def _send_enquiry_notification(enquiry):
         )
     except Exception as e:
         logger.warning(f"Could not send email notification: {e}")
+
+
+# ==========================================
+# STAFF & MANAGEMENT DASHBOARD
+# ==========================================
+import csv
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import get_object_or_404
+
+
+def dashboard_login(request):
+    """Branded staff portal authentication view."""
+    if request.user.is_authenticated and request.user.is_staff:
+        return redirect('core:dashboard')
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            if user.is_staff:
+                login(request, user)
+                messages.success(request, f"Welcome back, {user.first_name or user.username}!")
+                return redirect('core:dashboard')
+            else:
+                messages.error(request, "Access restricted. Staff authorization required.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'dashboard/login.html', {'form': form})
+
+
+def dashboard_logout(request):
+    """Logs staff member out safely."""
+    logout(request)
+    messages.info(request, "You have been logged out of the staff management portal.")
+    return redirect('core:dashboard_login')
+
+
+@login_required(login_url='core:dashboard_login')
+@user_passes_test(lambda u: u.is_staff, login_url='core:dashboard_login')
+def dashboard(request):
+    """Staff Operations Dashboard with lead pipeline and statistics."""
+    current_status = request.GET.get('status')
+    current_category = request.GET.get('category')
+
+    enquiries_qs = Enquiry.objects.all()
+
+    # Filter by review status or category
+    if current_status == 'pending':
+        enquiries_qs = enquiries_qs.filter(is_reviewed=False)
+    elif current_status == 'reviewed':
+        enquiries_qs = enquiries_qs.filter(is_reviewed=True)
+
+    if current_category:
+        enquiries_qs = enquiries_qs.filter(category=current_category)
+
+    # KPI Statistics
+    total_count = Enquiry.objects.count()
+    pending_count = Enquiry.objects.filter(is_reviewed=False).count()
+    construction_count = Enquiry.objects.filter(category__startswith='construction').count()
+    real_estate_count = Enquiry.objects.filter(category__startswith='property').count()
+
+    context = {
+        'enquiries': enquiries_qs[:50],
+        'total_count': total_count,
+        'pending_count': pending_count,
+        'construction_count': construction_count,
+        'real_estate_count': real_estate_count,
+        'current_status': current_status,
+        'current_category': current_category,
+    }
+    return render(request, 'dashboard/index.html', context)
+
+
+@login_required(login_url='core:dashboard_login')
+@user_passes_test(lambda u: u.is_staff, login_url='core:dashboard_login')
+def dashboard_properties(request):
+    """Staff property listings inventory overview."""
+    properties = Property.objects.all()
+    return render(request, 'dashboard/properties.html', {'properties': properties})
+
+
+@login_required(login_url='core:dashboard_login')
+@user_passes_test(lambda u: u.is_staff, login_url='core:dashboard_login')
+def toggle_enquiry_status(request, enquiry_id):
+    """Allows staff to toggle an enquiry's reviewed/contacted status with 1 click."""
+    if request.method == 'POST':
+        enquiry = get_object_or_404(Enquiry, id=enquiry_id)
+        enquiry.is_reviewed = not enquiry.is_reviewed
+        enquiry.save()
+        status_label = "Contacted / Reviewed" if enquiry.is_reviewed else "Pending"
+        messages.success(request, f"Enquiry for {enquiry.name} marked as {status_label}.")
+    return redirect('core:dashboard')
+
+
+@login_required(login_url='core:dashboard_login')
+@user_passes_test(lambda u: u.is_staff, login_url='core:dashboard_login')
+def export_enquiries_csv(request):
+    """Exports customer enquiry data into a structured CSV file for spreadsheets."""
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="unique_customer_enquiries.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Name', 'Email', 'Phone', 'Category', 'Subject', 'Message', 'Contacted Status', 'Submitted Date'])
+
+    for e in Enquiry.objects.all().order_by('-created_at'):
+        writer.writerow([
+            e.id,
+            e.name,
+            e.email,
+            e.phone,
+            e.get_category_display(),
+            e.subject,
+            e.message.replace('\n', ' '),
+            'Reviewed' if e.is_reviewed else 'Pending',
+            e.created_at.strftime('%Y-%m-%d %H:%M')
+        ])
+
+    return response
