@@ -168,3 +168,4 @@ As specified in the project governance:
 - All dynamic pages are rendered server-side via **Django Templates**.
 - All styles are compiled via **Tailwind CSS v4** without mixing v3 configurations.
 - Client submissions are handled securely with **Django Forms** and CSRF protection.
+

@@ -208,12 +208,19 @@ The following information should be obtained from the business owner:
 
 ---
 
-## 11. Current project status
+## 11. Current project status & hosting evaluation
 
-**Status:** Planning.
+**Status:** Phase 08 (QA & Security Verification) Completed.  
+**Build Health:** 12/12 Automated tests passing; Django system check clean.  
+**Next Recommended Action:** Phase 09 Deployment Planning & Hosting Selection.
 
-**Current priority:** Establish the technical foundation and complete business discovery.
+### Hosting Options Evaluation (For Project Owner Approval)
 
-**Next recommended action:** Execute Phase 00 of PROMPTS.md.
+| Provider | Type | Managed PostgreSQL | Static Assets / Media | Estimated Cost | Recommendation |
+|---|---|---|---|---|---|
+| **Render** | Managed Cloud Application | Built-in managed PostgreSQL addon | Native static file serving or WhiteNoise | Free tier / ~$7/mo starter | **Recommended:** Zero-maintenance, automated git push deployments, automatic free SSL certificates. |
+| **Railway** | Platform as a Service (PaaS) | Managed PostgreSQL plugin | Built-in persistent volume | Usage-based (~$5/mo) | High developer ergonomics, instant database provisioning. |
+| **PythonAnywhere** | Dedicated Python Hosting | Available (MySQL native, Postgres requires paid tier) | WSGI static file mapping | ~$5 - $12/mo | Dedicated Python environment; slightly more manual git deployments. |
+| **DigitalOcean App Platform** | PaaS / Container | Managed PostgreSQL cluster | Integrated CDN / Spaces | ~$12 - $20/mo | Enterprise scalability, high reliability for larger database loads. |
 
-**Important:** All proposed features, brand directions and technical decisions remain subject to review and approval.
+*Governance Notice:* No hosting service or domain will be purchased without explicit client authorization.

@@ -11,3 +11,4 @@ urlpatterns = [
     path('properties/', views.properties, name='properties'),
     path('contact/', views.contact, name='contact'),
 ]
+
