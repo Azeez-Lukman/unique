@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@source "../../templates/**/*.html";
+@source "../../core/**/*.py";
+
+@theme {
+  /* Unique Property & Construction Official Brand Palette (Calibrated from Logo) */
+  --color-brand-green: #1c3d28;
+  --color-brand-green-hover: #265136;
+  --color-brand-green-dark: #112619;
+  --color-brand-green-subtle: #edf3ee;
+
+  --color-brand-gold: #c5a059;
+  --color-brand-gold-hover: #af8b45;
+  --color-brand-gold-light: #fbf7ee;
+
+  --color-brand-ivory: #fbfbf9;
+  --color-brand-sand: #f4efe6;
+  --color-brand-charcoal: #1d2520;
+  --color-brand-muted: #526359;
+  --color-brand-border: #e2e8e4;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-brand-charcoal);
+    background-color: var(--color-brand-ivory);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+}

@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Unique Property & Construction Company{% endblock %}
+{% block meta_description %}Get in touch with Unique Property & Construction Company. Discuss residential & commercial construction or property management inquiries.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="bg-brand-green-dark text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl space-y-4">
+            <span class="inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Direct Communication</span>
+            </span>
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Let’s Discuss Your <br>
+                <span class="text-brand-gold italic">Project or Property.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-brand-sand/90 font-normal leading-relaxed">
+                Whether you have an upcoming architectural construction build, require dedicated property management, or wish to explore real estate opportunities, our team is ready to assist.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form & Info Grid -->
+<section class="py-16 lg:py-24 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Direct Channels & Details (5 cols) -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <div class="space-y-4">
+                    <span class="text-brand-green text-xs font-bold uppercase tracking-widest">Connect With Us</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal">
+                        Direct Inquiries & Consultations
+                    </h2>
+                    <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+                        Prefer an instant conversation? Reach out directly through telephone or WhatsApp for immediate consultation scheduling.
+                    </p>
+                </div>
+
+                <!-- Contact Channels Cards -->
+                <div class="space-y-4">
+                    
+                    <a href="https://wa.me/?text=Hello%20Unique%20Property%20and%20Construction" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-white border border-brand-border shadow-sm flex items-start gap-4 hover:border-brand-green transition group">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-semibold text-brand-muted uppercase">Fastest Response</span>
+                            <span class="block font-bold text-brand-charcoal text-base">Chat on WhatsApp</span>
+                            <span class="block text-xs text-emerald-700 font-medium mt-0.5">Available for instant messages</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+15550192834" class="p-5 rounded-2xl bg-white border border-brand-border shadow-sm flex items-start gap-4 hover:border-brand-green transition group">
+                        <div class="w-11 h-11 rounded-xl bg-brand-green-subtle text-brand-green flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                            <i data-lucide="phone-call" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-semibold text-brand-muted uppercase">Direct Phone Line</span>
+                            <span class="block font-bold text-brand-charcoal text-base">Call Our Advisory Team</span>
+                            <span class="block text-xs text-brand-muted mt-0.5">Mon - Sat: 8:00 AM - 6:00 PM</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:info@uniqueproperty.com" class="p-5 rounded-2xl bg-white border border-brand-border shadow-sm flex items-start gap-4 hover:border-brand-green transition group">
+                        <div class="w-11 h-11 rounded-xl bg-brand-sand text-brand-green-dark flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-semibold text-brand-muted uppercase">Official Email</span>
+                            <span class="block font-bold text-brand-charcoal text-base">info@uniqueproperty.com</span>
+                            <span class="block text-xs text-brand-muted mt-0.5">Enquiries reviewed within 24 hours</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- Office Location & Status Note -->
+                <div class="p-6 rounded-2xl bg-brand-sand/50 border border-brand-border space-y-2">
+                    <h3 class="font-bold text-sm text-brand-charcoal flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4 text-brand-green"></i>
+                        <span>Operating Hours & Physical Office</span>
+                    </h3>
+                    <p class="text-xs text-brand-muted leading-relaxed">
+                        Monday through Saturday from 8:00 AM to 6:00 PM. Site consultations and in-person meetings arranged by appointment.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Interactive Enquiry Form (7 cols) -->
+            <div class="lg:col-span-7">
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-brand-border shadow-xl space-y-6">
+                    
+                    <div class="space-y-1">
+                        <span class="text-brand-green text-xs font-bold uppercase tracking-widest">Enquiry Form</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-charcoal">Send Us a Direct Message</h3>
+                        <p class="text-brand-muted text-xs sm:text-sm">
+                            Please select the relevant category so your enquiry reaches the specialized division immediately.
+                        </p>
+                    </div>
+
+                    <form method="POST" action="{% url 'core:contact' %}" class="space-y-5">
+                        {% csrf_token %}
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Full Name *</label>
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                <p class="text-rose-600 text-xs mt-1">{{ form.name.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Email Address *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                <p class="text-rose-600 text-xs mt-1">{{ form.email.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Phone Number *</label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                <p class="text-rose-600 text-xs mt-1">{{ form.phone.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Enquiry Category *</label>
+                                {{ form.category }}
+                                {% if form.category.errors %}
+                                <p class="text-rose-600 text-xs mt-1">{{ form.category.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Subject / Reference</label>
+                            {{ form.subject }}
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Message & Project Scope *</label>
+                            {{ form.message }}
+                            {% if form.message.errors %}
+                            <p class="text-rose-600 text-xs mt-1">{{ form.message.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-brand-green hover:bg-brand-green-hover text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                                <span>Submit Enquiry</span>
+                                <i data-lucide="send" class="w-4 h-4 text-brand-gold"></i>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-16 bg-white border-t border-brand-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="text-center space-y-2">
+            <span class="text-brand-green text-xs font-bold uppercase tracking-widest">Common Questions</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-charcoal">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            
+            <details class="group p-5 rounded-xl border border-brand-border bg-brand-ivory cursor-pointer">
+                <summary class="font-bold text-brand-charcoal flex justify-between items-center text-sm sm:text-base list-none">
+                    <span>How do I request a cost estimate for my construction project?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-brand-muted group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-brand-muted text-sm mt-3 leading-relaxed">
+                    Submit your preliminary specifications, site location, or architectural drawings via our enquiry form. We conduct a preliminary feasibility review and schedule a consultation to prepare a detailed, itemized estimate.
+                </p>
+            </details>
+
+            <details class="group p-5 rounded-xl border border-brand-border bg-brand-ivory cursor-pointer">
+                <summary class="font-bold text-brand-charcoal flex justify-between items-center text-sm sm:text-base list-none">
+                    <span>What does your full-service property management include?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-brand-muted group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-brand-muted text-sm mt-3 leading-relaxed">
+                    We handle everything from tenant sourcing, identity and income vetting, and legal lease preparation to monthly rent collection, emergency and routine maintenance, and scheduled property condition inspections.
+                </p>
+            </details>
+
+            <details class="group p-5 rounded-xl border border-brand-border bg-brand-ivory cursor-pointer">
+                <summary class="font-bold text-brand-charcoal flex justify-between items-center text-sm sm:text-base list-none">
+                    <span>Do you build both residential homes and commercial developments?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-brand-muted group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-brand-muted text-sm mt-3 leading-relaxed">
+                    Yes. We operate dedicated teams experienced in bespoke single-family residential villas as well as commercial retail and office construction, ensuring relevant engineering standards and building codes are strictly adhered to.
+                </p>
+            </details>
+
+            <details class="group p-5 rounded-xl border border-brand-border bg-brand-ivory cursor-pointer">
+                <summary class="font-bold text-brand-charcoal flex justify-between items-center text-sm sm:text-base list-none">
+                    <span>Can you help me source land or a property to purchase?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-brand-muted group-open:rotate-180 transition"></i>
+                </summary>
+                <p class="text-brand-muted text-sm mt-3 leading-relaxed">
+                    Yes. Through our property sales and sourcing desk, clients provide us with target locations, zoning needs, and investment budgets, and we assist in identifying verified land plots or completed properties.
+                </p>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}

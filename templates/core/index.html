@@ -1,0 +1,350 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Unique Property & Construction Company | Building Construction & Real Estate{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-brand-green-dark text-white overflow-hidden py-20 lg:py-28">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{% static 'images/hero-main.jpg' %}" alt="Modern Architectural Construction" class="w-full h-full object-cover object-center opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-green-dark via-brand-green-dark/85 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl space-y-6">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-brand-gold text-xs sm:text-sm font-semibold tracking-wide">
+                <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
+                <span>Building Construction & Real Estate Management</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                “If you can dream it, <br class="hidden sm:inline">
+                <span class="text-brand-gold italic">we can build it.”</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-brand-sand/90 font-normal leading-relaxed max-w-2xl">
+                We bring architectural visions to life and deliver disciplined real estate management. From custom residential builds to commercial facilities and end-to-end property oversight, we are your trusted partner.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 sm:items-center">
+                <a href="#enquiry-section" class="inline-flex justify-center items-center gap-2.5 bg-brand-gold hover:bg-brand-gold-hover text-brand-green-dark px-7 py-3.5 rounded-lg text-base font-bold shadow-lg transition transform hover:-translate-y-0.5">
+                    <span>Discuss Your Project</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="{% url 'core:construction' %}" class="inline-flex justify-center items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-3.5 rounded-lg text-base font-medium transition">
+                    <span>Explore Our Services</span>
+                </a>
+            </div>
+
+            <div class="pt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-white/15 text-xs sm:text-sm text-brand-sand/80">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                    <span>Residential & Commercial</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                    <span>Full Property Management</span>
+                </div>
+                <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                    <span>Single-Point Accountability</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Dual Division Showcase -->
+<section class="py-20 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Our Core Capabilities</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal">Two Specialized Divisions. One High Standard.</h2>
+            <p class="text-brand-muted text-base sm:text-lg">
+                Whether creating physical structures from the ground up or managing real estate assets for long-term value, our teams operate with unmatched dedication.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Pillar 1: Building & Construction -->
+            <div class="group bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="{% static 'images/residential.jpg' %}" alt="Residential Construction" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-brand-green text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        Division 01
+                    </div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-charcoal group-hover:text-brand-green transition">Building & Construction</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            From custom family residences to commercial business facilities, our construction management covers architectural coordination, structural engineering, site supervision, and premium finishing.
+                        </p>
+                        <ul class="space-y-2 pt-2 text-sm text-brand-charcoal font-medium">
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green"></i>
+                                <span>Custom Residential Homes & Villas</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green"></i>
+                                <span>Commercial Buildings & Retail Spaces</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green"></i>
+                                <span>Major Structural Renovations & Expansions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                        <a href="{% url 'core:construction' %}" class="inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:text-brand-gold transition">
+                            <span>Learn More About Construction</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 2: Real Estate & Property Management -->
+            <div class="group bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="{% static 'images/management.jpg' %}" alt="Property Management and Real Estate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-brand-gold text-brand-green-dark text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        Division 02
+                    </div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-charcoal group-hover:text-brand-green transition">Real Estate & Management</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            Protecting property investments and connecting buyers, sellers, landlords, and tenants. We provide total asset care, tenant vetting, rent collection, and transparent property transactions.
+                        </p>
+                        <ul class="space-y-2 pt-2 text-sm text-brand-charcoal font-medium">
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i>
+                                <span>End-to-End Property & Rental Management</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i>
+                                <span>Vetted Tenant Placement & Lease Execution</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i>
+                                <span>Property Sales Advisory & Sourcing</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                        <a href="{% url 'core:real_estate' %}" class="inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:text-brand-gold transition">
+                            <span>Learn More About Real Estate</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Our 4-Step Process -->
+<section class="py-20 bg-brand-sand/50 border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">The Unique Approach</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal">How We Deliver Excellence</h2>
+            <p class="text-brand-muted text-base">
+                A systematic, transparent process that eliminates surprises and maintains quality from the initial sketch to long-term property handover.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm space-y-4 relative">
+                <span class="text-4xl font-serif font-bold text-brand-green/20">01</span>
+                <h3 class="text-lg font-bold text-brand-charcoal">Vision Alignment</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    We listen to your specific requirements, project scale, functional needs, and budget parameters to formulate a concrete strategy.
+                </p>
+            </div>
+
+            <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm space-y-4 relative">
+                <span class="text-4xl font-serif font-bold text-brand-green/20">02</span>
+                <h3 class="text-lg font-bold text-brand-charcoal">Planning & Costing</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Transparent specifications, engineering checks, timeline scheduling, and clear contractual agreements before breaking ground.
+                </p>
+            </div>
+
+            <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm space-y-4 relative">
+                <span class="text-4xl font-serif font-bold text-brand-green/20">03</span>
+                <h3 class="text-lg font-bold text-brand-charcoal">Disciplined Execution</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Supervised on-site construction or meticulous tenant onboarding with regular milestone reports and strict quality compliance.
+                </p>
+            </div>
+
+            <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm space-y-4 relative">
+                <span class="text-4xl font-serif font-bold text-brand-green/20">04</span>
+                <h3 class="text-lg font-bold text-brand-charcoal">Handover & Care</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Comprehensive final walkthrough, key handover, and ongoing property management to protect and grow your asset's value.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Why Choose Unique</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal leading-tight">
+                    Built on Integrity. Backed by Practical Expertise.
+                </h2>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    Finding a trustworthy construction builder or dependable property manager shouldn't feel like a gamble. We combine craftsmanship with transparent business practices.
+                </p>
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-green-subtle flex items-center justify-center flex-shrink-0 text-brand-green">
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-base">Single Point of Contact</h4>
+                            <p class="text-brand-muted text-sm">No passing the buck between separate subcontractors, designers, and agents.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-green-subtle flex items-center justify-center flex-shrink-0 text-brand-green">
+                            <i data-lucide="file-check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-base">Transparent Communication</h4>
+                            <p class="text-brand-muted text-sm">Clear pricing, verified progress updates, and honest counsel from day one.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-green-subtle flex items-center justify-center flex-shrink-0 text-brand-green">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-base">Uncompromising Standards</h4>
+                            <p class="text-brand-muted text-sm">Structural durability, premium building materials, and rigorous inspections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                    <img src="{% static 'images/about-craft.jpg' %}" alt="Architectural Planning and Construction Work" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-6 left-6 right-6 bg-brand-green-dark/95 backdrop-blur p-6 rounded-xl border border-white/10 text-white">
+                        <p class="font-serif italic text-base sm:text-lg text-brand-gold">
+                            “Our commitment is simple: build with precision, manage with diligence, and treat every client property as if it were our own.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Direct Lead Capture / Integrated Enquiry Section -->
+<section id="enquiry-section" class="py-20 bg-brand-sand/40 border-t border-brand-border scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-white p-8 sm:p-12 rounded-3xl border border-brand-border shadow-xl space-y-8">
+            
+            <div class="text-center space-y-2">
+                <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Start the Conversation</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-charcoal">Tell Us About Your Project</h2>
+                <p class="text-brand-muted text-sm sm:text-base max-w-xl mx-auto">
+                    Fill in your details below and select the service you are interested in. A senior specialist will review your request and get in touch.
+                </p>
+            </div>
+
+            <form method="POST" action="{% url 'core:home' %}" class="space-y-6">
+                {% csrf_token %}
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Full Name *</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <p class="text-rose-600 text-xs mt-1">{{ form.name.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Email Address *</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <p class="text-rose-600 text-xs mt-1">{{ form.email.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Phone Number *</label>
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                        <p class="text-rose-600 text-xs mt-1">{{ form.phone.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Service of Interest *</label>
+                        {{ form.category }}
+                        {% if form.category.errors %}
+                        <p class="text-rose-600 text-xs mt-1">{{ form.category.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Project Subject / Title</label>
+                    {{ form.subject }}
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-brand-charcoal uppercase tracking-wider mb-2">Project Details & Requirements *</label>
+                    {{ form.message }}
+                    {% if form.message.errors %}
+                    <p class="text-rose-600 text-xs mt-1">{{ form.message.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brand-green hover:bg-brand-green-hover text-white font-bold py-4 px-8 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                        <span>Send Project Enquiry</span>
+                        <i data-lucide="send" class="w-4 h-4 text-brand-gold"></i>
+                    </button>
+                    <p class="text-center text-xs text-brand-muted mt-3">
+                        We respect your privacy. Your information is strictly used to reply to your enquiry.
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}

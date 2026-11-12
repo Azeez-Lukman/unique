@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Building & Construction Services | Unique Property & Construction{% endblock %}
+{% block meta_description %}Professional residential and commercial construction services. Custom homes, commercial developments, structural renovations, and turnkey building solutions.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="bg-brand-green-dark text-white py-16 lg:py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl space-y-4">
+            <span class="inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <i data-lucide="hard-hat" class="w-4 h-4"></i>
+                <span>Construction Division</span>
+            </span>
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Architectural Construction <br>
+                <span class="text-brand-gold italic">Engineered to Endure.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-brand-sand/90 font-normal leading-relaxed">
+                Whether you are constructing your dream family residence or developing modern commercial facilities, we combine rigorous project management with skilled craftsmanship.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Residential Construction -->
+<section class="py-20 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green-subtle text-brand-green text-xs font-bold uppercase tracking-wider">
+                    <span>Residential Building</span>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-brand-charcoal">
+                    Custom Residential Homes & Renovations
+                </h2>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    Building a home is one of life’s most significant investments. We work closely with you from initial site surveys and foundation laying through to roof installation, interior MEP (mechanical, electrical, plumbing), and final custom finishes.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-green flex-shrink-0"></i>
+                        <span>Custom Detached Homes</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-green flex-shrink-0"></i>
+                        <span>Luxury Multi-Story Villas</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-green flex-shrink-0"></i>
+                        <span>Structural Home Additions</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-green flex-shrink-0"></i>
+                        <span>Complete Modern Renovations</span>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <a href="{% url 'core:contact' %}?category=construction_residential" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-lg font-semibold text-sm transition">
+                        <span>Enquire on Residential Build</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-brand-border">
+                    <img src="{% static 'images/residential.jpg' %}" alt="Custom Residential Villa Construction" class="w-full h-[400px] object-cover">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Commercial Construction -->
+<section class="py-20 bg-white border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 order-2 lg:order-1">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-brand-border">
+                    <img src="{% static 'images/commercial.jpg' %}" alt="Commercial Construction Projects" class="w-full h-[400px] object-cover">
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 text-brand-green-dark text-xs font-bold uppercase tracking-wider">
+                    <span>Commercial Building</span>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-brand-charcoal">
+                    Commercial Facilities & Business Developments
+                </h2>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    Commercial construction requires precision scheduling, strict adherence to building codes, safety regulations, and functional utility. We deliver durable facilities tailored to your operational specifications.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span>Retail & Office Complexes</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span>Commercial Fit-outs & Partitions</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span>Warehousing & Light Industrial</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-medium text-brand-charcoal">
+                        <i data-lucide="check" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span>Code Compliance & Inspections</span>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <a href="{% url 'core:contact' %}?category=construction_commercial" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-lg font-semibold text-sm transition">
+                        <span>Enquire on Commercial Project</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Construction Phase Roadmap -->
+<section class="py-20 bg-brand-sand/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Project Management</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-charcoal">The Building Lifecycle</h2>
+            <p class="text-brand-muted text-base">
+                How we guide your construction project from concept through completion.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-8 rounded-2xl border border-brand-border space-y-4">
+                <div class="w-10 h-10 rounded-full bg-brand-green text-white font-bold flex items-center justify-center text-sm">
+                    1
+                </div>
+                <h3 class="text-lg font-bold text-brand-charcoal">Pre-Construction & Feasibility</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Site assessment, architectural plan reviews, zoning verifications, and detailed bill of quantities (BOQ) with transparent cost forecasting.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-brand-border space-y-4">
+                <div class="w-10 h-10 rounded-full bg-brand-green text-white font-bold flex items-center justify-center text-sm">
+                    2
+                </div>
+                <h3 class="text-lg font-bold text-brand-charcoal">Supervised Execution</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Groundwork, substructure, framing, concrete curing, roofing, and utilities, with regular site progress reviews and on-site supervisory oversight.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-brand-border space-y-4">
+                <div class="w-10 h-10 rounded-full bg-brand-green text-white font-bold flex items-center justify-center text-sm">
+                    3
+                </div>
+                <h3 class="text-lg font-bold text-brand-charcoal">Finishing & Commissioning</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    High-end architectural finishes, fixtures, snag list resolution, system testing, and official final handover with documentation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Direct Action -->
+<section class="py-16 bg-brand-green-dark text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <h2 class="font-serif text-3xl font-bold">Have an upcoming build in mind?</h2>
+        <p class="text-brand-sand/80 text-base max-w-xl mx-auto">
+            Contact us for a preliminary review of your site, plans, or project specifications.
+        </p>
+        <div class="pt-2">
+            <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-green-dark font-bold px-8 py-3.5 rounded-lg transition shadow-md">
+                <span>Request Project Consultation</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

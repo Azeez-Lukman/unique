@@ -1,0 +1,814 @@
+
+# UNIQUE PROPERTY & CONSTRUCTION COMPANY — WEBSITE DEVELOPMENT
+
+## 1. Project Overview
+
+Build a professional, modern, responsive website for **Unique Property & Construction Company**, a business operating in building construction and real estate management.
+
+The company offers:
+- Residential construction
+- Commercial construction
+- Property management
+- Property sales
+- Property rentals
+
+The company's existing tagline is:
+
+**“If you can dream it, we can build it.”**
+
+The website should establish credibility, communicate the company's services clearly, attract potential clients, and make it easy for visitors to enquire about construction projects or real estate opportunities.
+
+The website must feel like a credible construction and real estate business, not a generic business template.
+
+---
+
+# 2. Recommended Technology Stack
+
+**The following stack is the project's technical standard. Use it throughout development unless a change is justified and approved by the project owner.**
+
+### Frontend
+- HTML5 — semantic page structure.
+- Tailwind CSS v4 — styling and responsive layouts.
+- Vanilla JavaScript — interactivity and frontend behaviour.
+- Django Templates — rendering dynamic pages from the backend.
+
+### Backend
+- Python — primary backend language.
+- Django — web framework, routing, business logic, forms and administration.
+
+### Database
+- PostgreSQL — primary relational database.
+
+### Development and version control
+- Visual Studio Code — development environment.
+- Python virtual environment — dependency isolation.
+- Git — version control.
+- GitHub — source-code repository.
+- Node.js and npm — Tailwind CSS v4 build tooling where required.
+
+### Design and visual resources
+- Figma — interface planning and design exploration.
+- Lucide Icons — interface icons.
+- Google Fonts — typography, or locally hosted alternatives where appropriate.
+- Properly licensed architectural and real estate imagery where original company photographs are unavailable.
+
+### Testing and quality assurance
+- Chrome DevTools — browser inspection and debugging.
+- Lighthouse — performance, accessibility and SEO audits.
+- Django testing tools — backend and application tests.
+- Playwright — optional browser automation if required.
+
+### SEO and analytics
+- Google Search Console — search performance monitoring.
+- Google Analytics 4 — optional visitor analytics, subject to project-owner approval and appropriate privacy implementation.
+
+### Deployment
+Use a hosting provider that supports:
+- Python and Django applications.
+- PostgreSQL.
+- Environment variables and secure production configuration.
+- Static asset serving.
+- HTTPS and custom domain configuration.
+- Reliable application deployment and backups.
+
+**Do not select a hosting provider, purchase a domain, or incur paid service costs without approval.**
+
+### Technology restrictions
+
+Unless the project owner approves a documented change:
+
+- Do not use React.
+- Do not use Next.js.
+- Do not use Vue.
+- Do not replace Django with Node.js or another backend framework.
+- Do not introduce unnecessary libraries or services.
+- Do not use a separate frontend application when Django Templates can achieve the requirement.
+
+Tailwind CSS v4 must be implemented using its current conventions. Do not mix Tailwind v3 configuration instructions into the project.
+
+The goal is a straightforward, maintainable Django application with a clean frontend, not an unnecessarily complicated architecture.
+
+---
+
+# 3. Global Development Instructions
+
+Apply these instructions throughout every phase:
+
+1. Inspect the existing project structure before making changes.
+2. Preserve existing working code unless there is a clear reason to modify it.
+3. Follow the specified technology stack.
+4. Do not invent company information, achievements, testimonials, certifications, project history or property listings.
+5. Clearly identify information that still needs confirmation from the business owner.
+6. Avoid unnecessary complexity, dependencies and overengineering.
+7. Every button, link, form and interactive element must have a defined function.
+8. Make the website responsive across mobile, tablet and desktop.
+9. Prioritise accessibility, performance, security and maintainability.
+10. Keep code organised and reusable.
+11. Explain important implementation decisions.
+12. Update `TODO.md` and `project_status.md` after completing each major phase.
+13. Do not claim that a feature has been tested or completed unless it has actually been tested.
+14. Do not deploy, purchase services or publish the website without explicit approval.
+
+---
+
+# PHASE 00 — PROJECT INSPECTION & TECHNICAL FOUNDATION
+
+### Prompt 00.1 — Inspect the project
+
+Act as a senior Django developer and technical architect.
+
+Inspect the existing project files and folders.
+
+Identify:
+- Current project structure.
+- Existing frontend and backend implementation.
+- Installed dependencies.
+- Existing database configuration.
+- Existing reusable components.
+- Missing project requirements.
+- Potential technical issues.
+
+Do not modify anything yet.
+
+Present your findings and recommend a clean implementation plan using the technology stack specified in this document.
+
+### Prompt 00.2 — Establish the technical architecture
+
+Using the approved stack, define the complete technical architecture.
+
+The architecture must use:
+
+- Django for the backend.
+- Django Templates for page rendering.
+- HTML5 for semantic markup.
+- Tailwind CSS v4 for styling.
+- Vanilla JavaScript for frontend interactions.
+- PostgreSQL for persistent data storage.
+
+Define:
+- Django application structure.
+- URL and routing organisation.
+- Template hierarchy.
+- Static and media file organisation.
+- Database models required.
+- Form handling strategy.
+- Reusable frontend components.
+- Development and production environment configuration.
+
+Explain how Tailwind CSS v4 will be installed and compiled.
+
+Identify any required dependencies and explain their purpose before installation.
+
+Do not introduce React, Next.js or another framework.
+
+### Prompt 00.3 — Prepare the development environment
+
+Prepare the project for local development.
+
+Requirements:
+- Configure the Python virtual environment.
+- Configure Django.
+- Prepare PostgreSQL connectivity.
+- Set up Tailwind CSS v4 build tooling.
+- Create or update the dependency files.
+- Configure environment variables.
+- Prepare `.gitignore`.
+- Ensure sensitive credentials are not committed.
+- Establish a clear local development workflow.
+
+Do not use production credentials in local development.
+
+---
+
+# PHASE 01 — BUSINESS DISCOVERY & POSITIONING
+
+### Prompt 01.1 — Understand the business
+
+Act as a business strategist and digital brand consultant.
+
+Analyse the information available about Unique Property & Construction Company.
+
+The business operates across two primary areas:
+
+**Building and Construction**
+- Residential construction.
+- Commercial construction.
+
+**Real Estate**
+- Property management.
+- Property sales.
+- Property rentals.
+
+Identify:
+- The business's primary services.
+- Its potential customer groups.
+- The problems it solves.
+- What prospective customers need to know before making contact.
+- The information required to establish trust.
+
+Separate confirmed information from assumptions and missing information.
+
+Do not invent facts.
+
+### Prompt 01.2 — Develop the brand positioning
+
+Develop a professional positioning direction for the website.
+
+The brand should communicate:
+- Professionalism.
+- Reliability.
+- Practical expertise.
+- Trust.
+- Quality.
+- Accountability.
+
+Explore how the existing tagline, “If you can dream it, we can build it,” can be incorporated naturally.
+
+The website should position the company as both a construction service provider and a real estate business.
+
+Avoid making it look like the company only builds houses or only sells properties.
+
+### Prompt 01.3 — Identify missing business information
+
+Prepare a structured list of information that must be obtained from the business owner before final publication.
+
+Include:
+- Official business name.
+- Business address and operating locations.
+- Company history.
+- Years of experience, if verifiable.
+- Construction services and project capabilities.
+- Property management responsibilities.
+- Sales and rental procedures.
+- Business registration details, if the company wishes to display them.
+- Professional qualifications and certifications, if applicable.
+- Previous projects and photographs.
+- Genuine customer reviews.
+- Social media accounts.
+- Preferred domain name.
+- Official contact details.
+
+Do not fill missing information with assumptions.
+
+---
+
+# PHASE 02 — WEBSITE ARCHITECTURE & USER EXPERIENCE
+
+### Prompt 02.1 — Develop the sitemap
+
+Create a practical website structure.
+
+Consider the following pages:
+
+1. Home
+2. About Us
+3. Construction Services
+4. Real Estate Services
+5. Property Sales & Rentals
+6. Contact Us
+
+Recommend whether any pages should be combined or separated based on the actual volume of content.
+
+Avoid unnecessary pages.
+
+### Prompt 02.2 — Design user journeys
+
+Define the main visitor journeys:
+
+**Construction enquiry**
+Visitor discovers construction services → reviews company information → understands capabilities → submits a project enquiry.
+
+**Property management enquiry**
+Visitor explores management services → understands the company's responsibilities → requests a consultation.
+
+**Property sales enquiry**
+Visitor explores available property information → requests further details.
+
+**Property rental enquiry**
+Visitor explores rental information → requests availability or viewing details.
+
+**General enquiry**
+Visitor contacts the company through the appropriate communication channel.
+
+Identify the best calls to action for each journey.
+
+### Prompt 02.3 — Plan the homepage
+
+Develop a detailed homepage structure.
+
+Consider:
+- Hero section.
+- Short company introduction.
+- Main service categories.
+- Construction and real estate highlights.
+- Why choose the company.
+- Process or approach.
+- Featured properties, only when genuine listings are available.
+- Customer testimonials, only when genuine reviews are supplied.
+- Contact or enquiry section.
+- Footer.
+
+Explain the purpose of each section.
+
+---
+
+# PHASE 03 — BRAND IDENTITY & DESIGN SYSTEM
+
+### Prompt 03.1 — Develop the visual direction
+
+Act as a senior brand and interface designer.
+
+Develop a premium visual direction suitable for a construction and real estate company.
+
+The design should feel:
+- Professional.
+- Confident.
+- Contemporary.
+- Structured.
+- Trustworthy.
+- Visually memorable.
+
+Avoid generic construction website aesthetics.
+
+### Prompt 03.2 — Establish the design system
+
+Define:
+- Primary and secondary colours.
+- Background colours.
+- Typography.
+- Heading hierarchy.
+- Body text styles.
+- Button styles.
+- Navigation styles.
+- Card styles.
+- Section spacing.
+- Border and radius rules.
+- Image treatments.
+- Responsive layout rules.
+
+Use a consistent design system across all pages.
+
+### Prompt 03.3 — Plan the imagery
+
+Since original project photographs and videos are currently unavailable:
+
+- Identify suitable architectural and real estate image categories.
+- Use properly licensed images.
+- Avoid presenting stock photographs as completed company projects.
+- Do not create fake project galleries.
+- Use images that support the company's actual services.
+
+Prepare an image sourcing and replacement plan for when the company provides original photographs.
+
+---
+
+# PHASE 04 — WEBSITE COPYWRITING
+
+### Prompt 04.1 — Develop the website content
+
+Act as a professional website copywriter.
+
+Write natural, persuasive and credible website content for Unique Property & Construction Company.
+
+The writing should:
+- Sound human and professional.
+- Avoid exaggerated marketing language.
+- Communicate the company's services clearly.
+- Build trust without making unsupported claims.
+- Encourage visitors to enquire.
+
+Avoid generic AI-sounding phrases.
+
+### Prompt 04.2 — Write the homepage copy
+
+Develop:
+- Main headline.
+- Supporting headline.
+- Hero description.
+- Primary and secondary calls to action.
+- Company introduction.
+- Service descriptions.
+- Why choose us section.
+- Closing enquiry message.
+
+Use the existing tagline where it fits naturally.
+
+### Prompt 04.3 — Write service page content
+
+Create separate, meaningful content for:
+
+**Construction**
+- Residential construction.
+- Commercial construction.
+
+**Real Estate**
+- Property management.
+- Property sales.
+- Property rentals.
+
+Explain each service in terms of what customers need and how the company can help.
+
+Do not promise services or capabilities that have not been confirmed.
+
+### Prompt 04.4 — Write About and Contact content
+
+Develop:
+- Company introduction.
+- Mission and vision, only if confirmed or approved by the business owner.
+- Company values.
+- Contact page introduction.
+- Enquiry instructions.
+- WhatsApp and email contact prompts.
+
+Use the supplied contact details accurately.
+
+---
+
+# PHASE 05 — FRONTEND DEVELOPMENT
+
+### Prompt 05.1 — Build the website foundation
+
+Using Django Templates, HTML5, Tailwind CSS v4 and Vanilla JavaScript, build the website foundation.
+
+Implement:
+- Base template.
+- Navigation.
+- Footer.
+- Reusable buttons.
+- Reusable cards.
+- Reusable section layouts.
+- Responsive containers.
+- Typography styles.
+- Consistent spacing.
+
+Ensure all pages extend the appropriate base template.
+
+### Prompt 05.2 — Build the homepage
+
+Implement the approved homepage design.
+
+Requirements:
+- Strong hero section.
+- Clear service introduction.
+- Responsive layouts.
+- Appropriate architectural imagery.
+- Effective calls to action.
+- Consistent visual hierarchy.
+- Clean mobile navigation.
+
+Do not use placeholder sections that have no purpose.
+
+### Prompt 05.3 — Build the remaining pages
+
+Implement the approved pages:
+
+- About Us.
+- Construction Services.
+- Real Estate Services.
+- Property Sales & Rentals.
+- Contact Us.
+
+Ensure the content, navigation and visual identity remain consistent.
+
+### Prompt 05.4 — Add frontend interactions
+
+Use Vanilla JavaScript only where necessary.
+
+Implement:
+- Mobile navigation.
+- Dropdowns where required.
+- Form interaction and feedback.
+- Image galleries where genuine images are available.
+- Any other approved interface interactions.
+
+Every interactive element must work correctly.
+
+Do not add decorative controls that do nothing.
+
+### Prompt 05.5 — Responsive refinement
+
+Test and refine:
+- Small mobile screens.
+- Large mobile screens.
+- Tablets.
+- Laptops.
+- Desktop displays.
+
+Check text wrapping, spacing, image cropping, navigation, buttons and form usability.
+
+---
+
+# PHASE 06 — BACKEND DEVELOPMENT
+
+### Prompt 06.1 — Design the database
+
+Using PostgreSQL and Django ORM, identify the models required for the website.
+
+Consider:
+- Enquiries.
+- Enquiry categories.
+- Property information, if the company wants listings managed through the website.
+- Testimonials, if genuine testimonials are supplied.
+- Project records, if a genuine portfolio becomes available.
+
+Avoid creating models for features that are not needed.
+
+### Prompt 06.2 — Build enquiry forms
+
+Create a functional enquiry system.
+
+The enquiry form should allow visitors to select the type of enquiry:
+
+- Construction.
+- Property management.
+- Property sales.
+- Property rentals.
+- General enquiry.
+
+Collect only necessary information.
+
+Include:
+- Name.
+- Email.
+- Phone number.
+- Enquiry category.
+- Message.
+
+Add appropriate validation, error handling and success feedback.
+
+Use Django Forms and Django's CSRF protection.
+
+### Prompt 06.3 — Secure enquiry processing
+
+Implement:
+- Server-side validation.
+- CSRF protection.
+- Spam prevention.
+- Safe handling of user-submitted data.
+- Appropriate database storage.
+- Secure error handling.
+
+Do not expose private information or internal application details.
+
+### Prompt 06.4 — Configure enquiry notifications
+
+Where appropriate, configure email notifications to the company's official email address.
+
+Use environment variables for email credentials.
+
+Do not hardcode passwords, API keys or SMTP credentials.
+
+Ensure the form provides a clear response if notification delivery fails.
+
+### Prompt 06.5 — Configure Django Admin
+
+Provide an appropriate protected administration interface for authorised staff to manage enquiries and any approved website content.
+
+Ensure:
+- Admin access is protected.
+- Permissions are appropriately configured.
+- Sensitive data is not publicly exposed.
+- The interface is easy to understand.
+
+---
+
+# PHASE 07 — SEO, LOCAL SEO & GEO
+
+### Prompt 07.1 — Technical SEO
+
+Implement:
+- Unique page titles.
+- Meta descriptions.
+- Semantic headings.
+- Canonical URLs.
+- XML sitemap.
+- Robots.txt.
+- Image alt text.
+- Internal links.
+- Clean URL structures.
+
+### Prompt 07.2 — Local SEO
+
+Prepare the website for local search visibility.
+
+Use only confirmed business locations and service areas.
+
+Include relevant location information naturally in:
+- Page titles.
+- Service descriptions.
+- Contact information.
+- Structured data where appropriate.
+
+Do not invent business addresses or service locations.
+
+### Prompt 07.3 — GEO and search visibility
+
+Optimise the website content to make the company's services easy for search engines and AI-powered discovery systems to understand.
+
+Use:
+- Clear service descriptions.
+- Descriptive page structures.
+- Relevant FAQs.
+- Consistent business information.
+- Appropriate structured data.
+- Natural language that answers common customer questions.
+
+Do not use keyword stuffing or fabricated claims.
+
+### Prompt 07.4 — Structured data
+
+Implement suitable Schema.org structured data where supported by verified information.
+
+Consider:
+- Organization.
+- LocalBusiness, where appropriate.
+- Service.
+- BreadcrumbList.
+- RealEstateAgent, only if it accurately describes the company's role.
+
+Ensure structured data reflects visible and confirmed website content.
+
+---
+
+# PHASE 08 — TESTING & QUALITY ASSURANCE
+
+### Prompt 08.1 — Functional testing
+
+Test:
+- Navigation.
+- Page links.
+- Contact forms.
+- Form validation.
+- Database submissions.
+- Email notifications.
+- Mobile menu.
+- Buttons.
+- WhatsApp links.
+- Telephone links.
+- Administrative access.
+
+Report any broken or incomplete functionality.
+
+### Prompt 08.2 — Responsive testing
+
+Test the website across different screen sizes and browsers.
+
+Identify:
+- Layout issues.
+- Overflow.
+- Broken sections.
+- Poor image cropping.
+- Unreadable text.
+- Inaccessible controls.
+
+Fix identified issues.
+
+### Prompt 08.3 — Performance testing
+
+Use Lighthouse and browser tools to assess:
+- Performance.
+- Accessibility.
+- Best practices.
+- SEO.
+
+Optimise:
+- Image sizes.
+- CSS delivery.
+- JavaScript usage.
+- Font loading.
+- Static assets.
+
+Avoid unnecessary scripts and dependencies.
+
+### Prompt 08.4 — Security review
+
+Review:
+- Django settings.
+- Secret management.
+- Database configuration.
+- CSRF protection.
+- Form validation.
+- Permissions.
+- Admin security.
+- HTTPS readiness.
+- Debug settings.
+
+Do not claim the application is secure without completing the relevant checks.
+
+---
+
+# PHASE 09 — DEPLOYMENT & LAUNCH
+
+### Prompt 09.1 — Prepare production configuration
+
+Prepare Django for production.
+
+Include:
+- Environment-based settings.
+- Production database configuration.
+- Static file handling.
+- Allowed hosts.
+- Secure cookies.
+- HTTPS configuration.
+- Logging.
+- Database migrations.
+- Backup considerations.
+
+Ensure debug mode is disabled in production.
+
+### Prompt 09.2 — Deployment planning
+
+Evaluate suitable Django-compatible hosting options.
+
+Compare:
+- Cost.
+- PostgreSQL support.
+- Deployment workflow.
+- Static file handling.
+- Reliability.
+- Maintenance requirements.
+
+Present the recommendation before proceeding.
+
+Do not purchase hosting or domain services without approval.
+
+### Prompt 09.3 — Deployment
+
+After approval:
+- Configure the hosting environment.
+- Connect PostgreSQL.
+- Deploy the application.
+- Configure the domain.
+- Enable HTTPS.
+- Run migrations.
+- Configure static files.
+- Test production forms and links.
+
+Confirm that the live website works correctly.
+
+---
+
+# PHASE 10 — HANDOVER & FUTURE DEVELOPMENT
+
+### Prompt 10.1 — Prepare project documentation
+
+Document:
+- Technology stack.
+- Project structure.
+- Installation instructions.
+- Environment variables.
+- Database setup.
+- Tailwind build process.
+- Local development commands.
+- Deployment process.
+- Admin usage.
+- Maintenance requirements.
+
+### Prompt 10.2 — Prepare client handover
+
+Provide the business owner with:
+- Website access information through a secure channel.
+- Admin instructions.
+- Enquiry management instructions.
+- Content update guidance.
+- Domain and hosting information.
+- Basic maintenance recommendations.
+
+Never expose passwords in public documentation.
+
+### Prompt 10.3 — Recommend future improvements
+
+Evaluate whether the business would benefit from:
+
+- Property listing management.
+- Property search and filtering.
+- Construction project portfolio.
+- Project progress updates.
+- Client enquiry tracking.
+- Blog and property insights.
+- Customer testimonials.
+- Additional service-area pages.
+
+Recommend features based on actual business needs, not simply because they are technically possible.
+
+Do not build these features without approval.
+
+---
+
+# 4. Project Completion Standard
+
+The website is considered ready for launch only when:
+
+- All approved pages are implemented.
+- The design works across devices.
+- All navigation and links work.
+- Enquiry forms submit successfully.
+- Submitted enquiries are stored correctly.
+- Approved email notifications work.
+- No fabricated business information remains.
+- SEO foundations are implemented.
+- Security and production checks are completed.
+- The client has reviewed and approved the website.
+- Deployment has been authorised.
+
+**Final instruction:** Work through the phases in order. Do not skip discovery, architecture or approval stages. Keep the implementation aligned with the recommended stack, and update `TODO.md`, `RECOMMENDATION.md` and `project_status.md` as the project progresses.

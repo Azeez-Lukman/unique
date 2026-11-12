@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Property Sales & Rentals | Unique Property & Construction{% endblock %}
+{% block meta_description %}Explore verified properties for sale and rent, or submit custom property acquisition and listing requirements with Unique Property & Construction.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="bg-brand-green-dark text-white py-16 lg:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl space-y-4">
+            <span class="inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <i data-lucide="building" class="w-4 h-4"></i>
+                <span>Real Estate Opportunities</span>
+            </span>
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Properties & Acquisition <br>
+                <span class="text-brand-gold italic">Curated & Verified.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-brand-sand/90 font-normal leading-relaxed">
+                Browse available properties for sale and lease, or partner with us to source or list residential and commercial real estate.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Navigation Bar -->
+<section class="py-6 bg-white border-b border-brand-border sticky top-20 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+            
+            <div class="flex items-center space-x-2">
+                <a href="{% url 'core:properties' %}" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition {% if not selected_type %}bg-brand-green text-white shadow-sm{% else %}bg-brand-sand/50 text-brand-charcoal hover:bg-brand-sand{% endif %}">
+                    All Opportunities
+                </a>
+                <a href="{% url 'core:properties' %}?type=sale" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition {% if selected_type == 'sale' %}bg-brand-green text-white shadow-sm{% else %}bg-brand-sand/50 text-brand-charcoal hover:bg-brand-sand{% endif %}">
+                    For Sale
+                </a>
+                <a href="{% url 'core:properties' %}?type=rent" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition {% if selected_type == 'rent' %}bg-brand-green text-white shadow-sm{% else %}bg-brand-sand/50 text-brand-charcoal hover:bg-brand-sand{% endif %}">
+                    For Rent
+                </a>
+            </div>
+
+            <a href="{% url 'core:contact' %}?category=property_sales" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-brand-green hover:text-brand-gold transition">
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                <span>Submit a Property Sourcing Request</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Listings Section -->
+<section class="py-16 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {% if listings %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for property in listings %}
+            <div class="bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div class="relative h-56 bg-brand-sand/40">
+                    {% if property.image %}
+                    <img src="{{ property.image.url }}" alt="{{ property.title }}" class="w-full h-full object-cover">
+                    {% else %}
+                    <div class="w-full h-full flex items-center justify-center bg-brand-green-subtle text-brand-green">
+                        <i data-lucide="home" class="w-12 h-12 opacity-40"></i>
+                    </div>
+                    {% endif %}
+                    <div class="absolute top-3 left-3 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+                        {{ property.get_listing_type_display }}
+                    </div>
+                    {% if property.price %}
+                    <div class="absolute bottom-3 right-3 bg-brand-green-dark/90 backdrop-blur text-brand-gold text-sm font-bold px-3 py-1 rounded-lg">
+                        {{ property.currency }} {{ property.price|floatformat:0 }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider mb-1">{{ property.get_property_type_display }}</div>
+                        <h3 class="font-serif text-xl font-bold text-brand-charcoal">{{ property.title }}</h3>
+                        <p class="text-xs text-brand-muted flex items-center gap-1 mt-1">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-green"></i>
+                            <span>{{ property.location }}</span>
+                        </p>
+                        <p class="text-sm text-brand-muted mt-3 line-clamp-2">{{ property.description }}</p>
+                    </div>
+
+                    {% if property.bedrooms or property.bathrooms or property.area_sqft %}
+                    <div class="pt-4 border-t border-brand-border flex items-center justify-between text-xs text-brand-muted">
+                        {% if property.bedrooms %}
+                        <span class="flex items-center gap-1"><i data-lucide="bed" class="w-4 h-4"></i> {{ property.bedrooms }} Beds</span>
+                        {% endif %}
+                        {% if property.bathrooms %}
+                        <span class="flex items-center gap-1"><i data-lucide="bath" class="w-4 h-4"></i> {{ property.bathrooms }} Baths</span>
+                        {% endif %}
+                        {% if property.area_sqft %}
+                        <span class="flex items-center gap-1"><i data-lucide="maximize" class="w-4 h-4"></i> {{ property.area_sqft }} sqft</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <div class="pt-3">
+                        <a href="{% url 'core:contact' %}?category=property_{{ property.listing_type }}&subject=Inquiry: {{ property.title }}" class="block text-center w-full bg-brand-green hover:bg-brand-green-hover text-white py-2.5 rounded-lg text-sm font-semibold transition">
+                            Inquire On Property
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Honest & Professional Sourcing Panel when no active public listings are uploaded yet -->
+        <div class="bg-white rounded-3xl border border-brand-border p-8 sm:p-14 shadow-sm max-w-3xl mx-auto text-center space-y-6">
+            <div class="w-16 h-16 rounded-2xl bg-brand-green-subtle text-brand-green flex items-center justify-center mx-auto">
+                <i data-lucide="search" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal">
+                    Property Sourcing & Private Client Matching
+                </h3>
+                <p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                    We represent private property sales, acquisitions, and rental opportunities directly with clients. If you have specific criteria or a property you wish to list, contact our advisory desk.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left pt-2">
+                <div class="p-5 rounded-xl bg-brand-sand/30 border border-brand-border space-y-2">
+                    <h4 class="font-bold text-brand-charcoal text-sm flex items-center gap-2">
+                        <i data-lucide="key" class="w-4 h-4 text-brand-green"></i>
+                        <span>Seeking to Buy or Rent</span>
+                    </h4>
+                    <p class="text-xs text-brand-muted leading-relaxed">
+                        Tell us your target location, budget, and required specifications. We match you with verified opportunities.
+                    </p>
+                    <a href="{% url 'core:contact' %}?category=property_sales" class="inline-block text-xs font-bold text-brand-green hover:underline pt-1">
+                        Submit Acquisition Request →
+                    </a>
+                </div>
+
+                <div class="p-5 rounded-xl bg-brand-sand/30 border border-brand-border space-y-2">
+                    <h4 class="font-bold text-brand-charcoal text-sm flex items-center gap-2">
+                        <i data-lucide="tag" class="w-4 h-4 text-brand-gold"></i>
+                        <span>Have a Property to List</span>
+                    </h4>
+                    <p class="text-xs text-brand-muted leading-relaxed">
+                        Partner with our real estate division for professional management, vetted tenant placement, or sale representation.
+                    </p>
+                    <a href="{% url 'core:contact' %}?category=property_management" class="inline-block text-xs font-bold text-brand-green hover:underline pt-1">
+                        List Your Property →
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-brand-border flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{% url 'core:contact' %}?category=property_sales" class="w-full sm:w-auto bg-brand-green hover:bg-brand-green-hover text-white font-bold px-8 py-3 rounded-xl transition text-sm">
+                    Inquire With Our Real Estate Desk
+                </a>
+                <a href="https://wa.me/?text=Hello%20Unique%20Property%20Real%20Estate" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto border border-brand-green text-brand-green font-semibold px-6 py-3 rounded-xl hover:bg-brand-green-subtle transition text-sm flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp Enquiry</span>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+{% endblock %}

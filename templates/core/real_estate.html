@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Real Estate & Property Management | Unique Property & Construction{% endblock %}
+{% block meta_description %}Comprehensive property management, property sales, and rental services. Reliable tenant placement, maintenance oversight, and real estate advisory.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="bg-brand-green-dark text-white py-16 lg:py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl space-y-4">
+            <span class="inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <i data-lucide="key" class="w-4 h-4"></i>
+                <span>Real Estate Division</span>
+            </span>
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Diligent Property Management. <br>
+                <span class="text-brand-gold italic">Enduring Asset Protection.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-brand-sand/90 font-normal leading-relaxed">
+                Owning property should create financial security, not administrative stress. We handle tenant relations, maintenance oversight, and property transactions with disciplined professionalism.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Property Management Focus -->
+<section class="py-20 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green-subtle text-brand-green text-xs font-bold uppercase tracking-wider">
+                    <span>Asset Management</span>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-brand-charcoal">
+                    Full-Service Property Management for Landlords
+                </h2>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    We act as the primary custodian of your property. Our management framework ensures that your physical assets are maintained to high standards and your rental income is collected predictably.
+                </p>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-sm">Rigorous Tenant Vetting</h4>
+                            <p class="text-brand-muted text-xs">Income verification, background checks, and reference interviews to place dependable occupants.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-sm">Rent Collection & Transparent Accounting</h4>
+                            <p class="text-brand-muted text-xs">Prompt collection, clear monthly reporting, and immediate disbursement to owners.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-charcoal text-sm">Routine Maintenance & Inspections</h4>
+                            <p class="text-brand-muted text-xs">Periodic inspections and trusted tradespeople for fast, cost-effective maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <a href="{% url 'core:contact' %}?category=property_management" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-lg font-semibold text-sm transition">
+                        <span>Request Management Proposal</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-brand-border">
+                    <img src="{% static 'images/management.jpg' %}" alt="Professional Real Estate Management" class="w-full h-[420px] object-cover">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Sales and Rental Services -->
+<section class="py-20 bg-white border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Transaction Services</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-charcoal">Property Sales & Rentals</h2>
+            <p class="text-brand-muted text-base">
+                Whether you are seeking to acquire real estate, sell a property, or find a vetted rental home.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Property Sales -->
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-5">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center">
+                    <i data-lucide="home" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-brand-charcoal">Property Sales & Acquisition</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    We assist buyers and sellers in navigating real estate transactions with complete transparency. For buyers, we help source vetted properties meeting specific investment criteria; for sellers, we connect verified buyers and handle inquiries professionally.
+                </p>
+                <div class="pt-2">
+                    <a href="{% url 'core:contact' %}?category=property_sales" class="inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:text-brand-gold transition">
+                        <span>Inquire About Buying or Selling</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Property Rentals -->
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-5">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center">
+                    <i data-lucide="file-text" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-brand-charcoal">Rental Leasing & Placement</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    For tenants seeking reliable, well-maintained rental accommodation and landlords seeking swift placement without prolonged vacancies. We manage legal lease agreements, move-in condition reports, and deposits securely.
+                </p>
+                <div class="pt-2">
+                    <a href="{% url 'core:contact' %}?category=property_rentals" class="inline-flex items-center gap-2 text-brand-green font-bold text-sm hover:text-brand-gold transition">
+                        <span>Inquire About Rental Leasing</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Direct Action -->
+<section class="py-16 bg-brand-green text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <h2 class="font-serif text-3xl font-bold">Have a property you would like managed?</h2>
+        <p class="text-brand-sand/90 text-base max-w-xl mx-auto">
+            Contact us today for a confidential discussion regarding your property management or leasing needs.
+        </p>
+        <div class="pt-2">
+            <a href="{% url 'core:contact' %}?category=property_management" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-green-dark font-bold px-8 py-3.5 rounded-lg transition shadow-md">
+                <span>Request Management Proposal</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

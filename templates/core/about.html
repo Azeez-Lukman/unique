@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | Unique Property & Construction Company{% endblock %}
+{% block meta_description %}Learn more about Unique Property & Construction Company, our mission, architectural standards, and dedication to building excellence and real estate management.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="bg-brand-green-dark text-white py-16 lg:py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl space-y-4">
+            <span class="inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <i data-lucide="building-2" class="w-4 h-4"></i>
+                <span>Our Heritage & Standards</span>
+            </span>
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Building With Purpose. <br>
+                <span class="text-brand-gold italic">Managing With Care.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-brand-sand/90 font-normal leading-relaxed">
+                Unique Property & Construction Company was founded on a simple principle: every client deserves structural excellence, honest communication, and end-to-end reliability.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Company Philosophy & Story -->
+<section class="py-20 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">Our Philosophy</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-charcoal">
+                    “If You Can Dream It, We Can Build It.”
+                </h2>
+                <div class="space-y-4 text-brand-muted text-base leading-relaxed">
+                    <p>
+                        This motto is more than a slogan—it reflects our attitude toward architectural challenges and client aspirations. Whether creating a custom family home from scratch, developing commercial premises, or taking charge of complex real estate portfolios, we bring disciplined project management to every engagement.
+                    </p>
+                    <p>
+                        Many clients face fragmentation in the property industry: dealing with architects who do not communicate with builders, or property managers who neglect ongoing maintenance. Unique Property unites construction craftsmanship and professional real estate management under a single, accountable standard.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-lg font-semibold text-sm transition">
+                        <span>Speak With Our Team</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-brand-border">
+                    <img src="{% static 'images/about-craft.jpg' %}" alt="Architectural Planning and Construction Excellence" class="w-full h-96 object-cover">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Our Guiding Values -->
+<section class="py-20 bg-white border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-green text-xs sm:text-sm font-bold tracking-widest uppercase">The Principles We Stand On</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-charcoal">Our Core Values</h2>
+            <p class="text-brand-muted text-base">
+                Every project we undertake is governed by strict commitments to quality, honesty, and safety.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center mb-4">
+                    <i data-lucide="shield" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-bold text-lg text-brand-charcoal">Unwavering Integrity</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Transparent pricing without hidden escalations. Honest timelines and clear progress reports throughout the lifecycle.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center mb-4">
+                    <i data-lucide="hammer" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-bold text-lg text-brand-charcoal">Master Craftsmanship</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    We select quality materials and skilled tradespeople to ensure structures endure for generations to come.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center mb-4">
+                    <i data-lucide="users" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-bold text-lg text-brand-charcoal">Client Partnership</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    Your goals drive our engineering. We actively listen, adapt, and keep you informed at every critical juncture.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-brand-sand/30 border border-brand-border space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-green text-white flex items-center justify-center mb-4">
+                    <i data-lucide="trending-up" class="w-6 h-6 text-brand-gold"></i>
+                </div>
+                <h3 class="font-bold text-lg text-brand-charcoal">Asset Preservation</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">
+                    In real estate management, we protect rental income, maintain property value, and minimize long-term wear and tear.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-16 bg-brand-green text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white max-w-2xl mx-auto">
+            Ready to bring your construction or real estate vision to reality?
+        </h2>
+        <p class="text-brand-sand/90 text-base max-w-xl mx-auto">
+            Contact us today for a structured consultation and transparent project assessment.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'core:contact' %}" class="bg-brand-gold hover:bg-brand-gold-hover text-brand-green-dark font-bold px-8 py-3.5 rounded-lg transition shadow-md">
+                Get In Touch
+            </a>
+            <a href="https://wa.me/?text=Hello%20Unique%20Property" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-8 py-3.5 rounded-lg transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Chat via WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
