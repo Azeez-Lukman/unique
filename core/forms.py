@@ -19,7 +19,7 @@ class EnquiryForm(forms.ModelForm):
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'w-full px-4 py-3 rounded-lg border border-brand-border bg-white text-brand-charcoal focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition text-sm',
-                'placeholder': '+1 (555) 000-0000',
+                'placeholder': '+234 814 695 8122',
                 'required': True
             }),
             'category': forms.Select(attrs={

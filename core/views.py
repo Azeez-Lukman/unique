@@ -110,8 +110,8 @@ def _send_enquiry_notification(enquiry):
         f"Message:\n{enquiry.message}\n\n"
         f"Submitted at: {enquiry.created_at.strftime('%Y-%m-%d %H:%M:%S')}\n"
     )
-    recipient = getattr(settings, 'NOTIFICATION_RECIPIENT_EMAIL', 'info@uniqueproperty.com')
-    sender = getattr(settings, 'DEFAULT_FROM_EMAIL', 'info@uniqueproperty.com')
+    recipient = getattr(settings, 'NOTIFICATION_RECIPIENT_EMAIL', 'uniquepropertyconstruction190@gmail.com')
+    sender = getattr(settings, 'DEFAULT_FROM_EMAIL', 'uniquepropertyconstruction190@gmail.com')
 
     try:
         send_mail(

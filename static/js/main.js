@@ -206,4 +206,46 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => alert.remove(), 500);
         }, 6000);
     });
+
+    // ----------------------------------------------------
+    // 4. Reliable Email Link Click & Copy-to-Clipboard Handler
+    // Ensures clicking always succeeds even if OS has no default desktop mail client
+    // ----------------------------------------------------
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+            
+            // Copy to clipboard as guaranteed fallback/convenience
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(() => {
+                    showToast(`Copied to clipboard: ${email}`);
+                }).catch(() => {});
+            }
+        });
+    });
+
+    function showToast(message) {
+        let toast = document.getElementById('global-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'global-toast';
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-brand-green-dark text-white px-5 py-3 rounded-xl shadow-2xl border border-brand-gold/40 text-xs sm:text-sm font-medium flex items-center gap-3 transition-all transform duration-300 translate-y-10 opacity-0 pointer-events-none';
+            document.body.appendChild(toast);
+        }
+
+        toast.innerHTML = `
+            <svg class="w-4 h-4 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>${message}</span>
+        `;
+        toast.classList.remove('translate-y-10', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-10', 'opacity-0');
+        }, 3500);
+    }
 });
