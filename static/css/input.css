@@ -59,3 +59,33 @@
     color: #1c3d28 !important;
   }
 }
+
+
+/* Custom Brand Select Full-Width Enforcement */
+.custom-brand-select-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.custom-brand-select-wrapper button {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.custom-options-menu {
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  z-index: 50 !important;
+}
+
+.custom-options-menu .option-item {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}

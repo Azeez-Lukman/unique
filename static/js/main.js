@@ -49,12 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create custom dropdown wrapper
         const wrapper = document.createElement('div');
-        wrapper.className = 'relative w-full custom-brand-select-wrapper text-left';
+        wrapper.className = 'relative w-full custom-brand-select-wrapper text-left block';
+        wrapper.style.width = '100%';
 
         // Trigger Button
         const trigger = document.createElement('button');
         trigger.type = 'button';
         trigger.className = 'w-full px-4 py-3 rounded-lg border border-brand-border bg-white text-brand-charcoal text-sm flex items-center justify-between cursor-pointer focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition shadow-sm text-left';
+        trigger.style.width = '100%';
+        trigger.style.boxSizing = 'border-box';
         
         const currentSelectedOption = select.options[select.selectedIndex] || select.options[0];
         
@@ -73,15 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger.appendChild(labelSpan);
         trigger.appendChild(chevron);
 
-        // Options List Container
+        // Options List Container - Guaranteed Full-Width of the Input
         const menu = document.createElement('div');
-        menu.className = 'custom-options-menu absolute left-0 right-0 mt-1.5 bg-white border border-brand-border rounded-xl shadow-2xl z-50 overflow-hidden py-1 max-h-64 overflow-y-auto hidden';
+        menu.className = 'custom-options-menu absolute left-0 right-0 w-full min-w-full mt-1.5 bg-white border border-brand-border rounded-xl shadow-2xl z-50 overflow-hidden py-1 max-h-64 overflow-y-auto hidden';
+        menu.style.width = '100%';
+        menu.style.minWidth = '100%';
+        menu.style.left = '0';
+        menu.style.right = '0';
+        menu.style.boxSizing = 'border-box';
 
         // Populate options matching brand palette
         Array.from(select.options).forEach(option => {
             const item = document.createElement('div');
             item.dataset.value = option.value;
-            item.className = 'option-item px-4 py-3 text-sm cursor-pointer flex items-center justify-between transition';
+            item.className = 'option-item w-full px-4 py-3 text-sm cursor-pointer flex items-center justify-between transition';
+            item.style.width = '100%';
+            item.style.boxSizing = 'border-box';
             
             const itemText = document.createElement('span');
             itemText.textContent = option.text;
