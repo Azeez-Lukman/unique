@@ -1,0 +1,28 @@
+databases:
+  - name: unique-postgres
+    databaseName: unique_db
+    user: unique_user
+    plan: free
+
+services:
+  - type: web
+    name: unique-property-construction
+    runtime: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: unique-postgres
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: WEB_CONCURRENCY
+        value: "4"
+      - key: DEFAULT_FROM_EMAIL
+        value: uniquepropertyconstruction190@gmail.com
+      - key: NOTIFICATION_RECIPIENT_EMAIL
+        value: uniquepropertyconstruction190@gmail.com

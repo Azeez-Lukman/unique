@@ -134,11 +134,11 @@ Legend:
 
 ## 09. Deployment
 
-- [ ] Select hosting environment.
-- [ ] Configure production environment.
+- [x] Select hosting environment.
+- [x] Configure production environment.
 - [ ] Configure domain and DNS.
-- [ ] Configure HTTPS.
-- [ ] Deploy website.
+- [x] Configure HTTPS.
+- [~] Deploy website.
 - [ ] Verify production pages.
 - [ ] Verify forms.
 - [ ] Verify notifications.
